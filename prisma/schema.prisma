@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  repoUrl   String
+  localPath String
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tasks AgentTask[]
+}
+
+model AgentTask {
+  id          String    @id @default(cuid())
+  projectId   String
+  title       String
+  prompt      String
+  status      String    @default("pending")
+  plan        String?
+  resultSummary String?
+  errorMessage  String?
+  legacyResult  String?   @map("result")
+  legacyLogs    String?   @map("logs")
+  prSummary   String?
+  approvedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  agentLogs AgentRunLog[]
+
+  @@map("Task")
+}
+
+model AgentRunLog {
+  id        String   @id @default(cuid())
+  taskId    String
+  role      String
+  content   String
+  legacyStep    String?  @map("step")
+  legacyMessage String?  @map("message")
+  createdAt DateTime @default(now())
+
+  task AgentTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+}
+
+model ModelConfig {
+  id            String  @id @default(cuid())
+  provider      String
+  model         String
+  baseUrl       String?
+  apiKeyEnvName String
+  enabled       Boolean @default(true)
+
+  @@unique([provider, model])
+}

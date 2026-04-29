@@ -1,0 +1,8 @@
+// 通用工具函数
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+/** 合并 Tailwind CSS 类名，自动处理冲突（shadcn/ui 标准用法） */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}

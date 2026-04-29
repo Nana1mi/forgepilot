@@ -1,0 +1,9 @@
+.next
+node_modules
+workspace
+prisma/prisma
+package-lock.json
+tsconfig.tsbuildinfo
+*.db
+plan*.md
+plan - 副本.md

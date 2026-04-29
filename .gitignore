@@ -3,12 +3,12 @@ node_modules
 dist
 build
 coverage
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
 workspace
 .DS_Store
 *.log
-prisma/dev.db
-
+*.db
+prisma/**/*.db
 plan.md
+*.tsbuildinfo
