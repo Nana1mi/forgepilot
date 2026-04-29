@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+build
+coverage
+.env
+.env.local
+.env.*.local
+workspace
+.DS_Store
+*.log
+prisma/dev.db
+
+plan.md
