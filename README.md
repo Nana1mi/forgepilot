@@ -4,7 +4,7 @@
 
 # ForgePilot
 
-ForgePilot 是一个基于 Next.js + Prisma + SQLite 的 AI 开发工作流 Agent（MVP 版本）。面向开发团队，支持克隆 GitHub 仓库、分析项目结构、生成执行计划、审批后写入代码变更、运行验证命令、失败后最多自动修复 3 次，并输出 PR 摘要。
+ForgePilot 是一个基于 Next.js + Prisma + SQLite 的 AI 开发工作流 Agent。面向开发团队，支持克隆 GitHub 仓库、分析项目结构、生成执行计划、审批后写入代码变更、运行验证命令、失败后自动修复，并输出 PR 摘要。
 
 ## 技术栈
 
