@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/brand/readme-logo.png" alt="ForgePilot Logo" width="180" />
+  <img src="./public/brand/readme-logo.png" alt="ForgePilot Logo" width="480" />
 </p>
 
 # ForgePilot
@@ -25,7 +25,25 @@ npx prisma migrate dev
 npm run dev
 ```
 
-访问 http://localhost:3000。
+访问 http://localhost:3000
+
+## 运行截图
+
+### 项目列表
+
+![项目列表](./public/screenshots/home.png)
+
+### 创建任务
+
+![创建任务 1](./public/screenshots/project-detail-01.png)
+
+![创建任务 2](./public/screenshots/project-detail-02.png)
+
+### 执行任务
+
+![任务执行 1](./public/screenshots/task-detail-01.png)
+
+![任务执行 2](./public/screenshots/task-detail-02.png)
 
 ## 模型配置
 
